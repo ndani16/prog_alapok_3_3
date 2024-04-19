@@ -13,4 +13,15 @@ with open('csigak.txt', 'r', encoding='utf-8') as bemenet:
         csigak.append(csiga)
         csiga = {}
 
+# a.	Hány csiga adatai találhatók meg az állományban?
+
 print(f"{len(csigak)} db adatai vannak a fájlban.")
+
+# b.	Hány meztelencsiga található az állományban? (Vegye figyelembe, hogy a félmeztelencsiga nem meztelencsiga!)
+
+db = 0
+for i in range(len(csigak)):
+    if 'meztelen' in csigak[i]['magyar'] and 'fél' not in csigak[i]['magyar']:
+        db += 1
+
+print(db)
