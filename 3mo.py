@@ -24,4 +24,19 @@ for i in range(len(csigak)):
     if 'meztelen' in csigak[i]['magyar'] and 'fél' not in csigak[i]['magyar']:
         db += 1
 
-print(db)
+print(f"{db} db meztelencsiga található az adatok között.")
+
+# c.	Kérje be egy csiga latin nevét, majd ha megtalálható az adatok között, írja ki a hozzá tartozó magyar nevet! Oldja meg, hogy a keresés akkor is hozzon eredményt, ha a latin nevet nem nagy kezdőbetűvel kezdjük (a keresés legyen kis/nagybetűre érzéketlen)! Ha nem található ilyen latin név, azt is jelezzük a felhasználónak! A keresés során ügyeljen arra, hogy a keresést ne folytassa, ha a választ biztosan meg tudja adni!
+
+be_csiga = input("Kérem a csiga latin nevét:")
+def kereses(csigak, s):
+    i = 0
+    talalat = False
+    while i < len(csigak) and not talalat:
+        i += 1
+        if i < len(csigak):
+            return csigak[i]['magyar']
+    else:
+        return "Nincs ilyen latin nevű csiga a listában"
+
+print(f'A csiga magyar neve: \n {kereses(csigak, be_csiga)}')
